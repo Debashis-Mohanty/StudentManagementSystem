@@ -1,0 +1,53 @@
+﻿@model IEnumerable<APIConsume.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="align-items-center">Student Details</h1>
+
+<p>
+    <a class="btn btn-primary text-white" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StuId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuEmail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuEmail)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.StuId  },new{ @class="btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.StuId },new{@class="btn btn-warning"}) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.StuId },new{@class="btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

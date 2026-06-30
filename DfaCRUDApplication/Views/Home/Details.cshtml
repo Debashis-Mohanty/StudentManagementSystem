@@ -1,0 +1,41 @@
+﻿@model DfaCRUDApplication.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="justify-content-center">Details of Student</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SGender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SGender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SDob)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SDob)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Sid">Edit</a> |
+    <a class="btn btn-danger text-white" asp-action="Index">Back to List</a>
+</div>

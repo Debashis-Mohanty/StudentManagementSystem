@@ -1,0 +1,41 @@
+﻿@model APIConsume.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Student Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StuId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StuId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StuName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StuName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StuGender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StuGender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StuEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StuEmail)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.StuId},new{@class="btn btn-success"}) |
+    <a class="btn btn-dark text-white" asp-action="Index">Back to List</a>
+</div>
